@@ -1,0 +1,106 @@
+$main-color : #ca1016;
+$second-color : #424242;
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+}
+#header{
+    .header-top{
+        .navbar{
+            align-items: flex-end;
+            padding: 0px;
+            .nav-item{
+                width: 25%;
+                background-color: $second-color;
+                text-transform: uppercase;
+                font-weight: 700;
+                padding: 15px 0;
+                border-right: 1px solid #616161;
+                a{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color: white;
+                    font-size: 30px;
+                    span{
+                        font-size: 17px;
+                    }
+                }
+            }
+            .active{
+                background-color: $main-color;
+            }
+        }
+    }
+    .header-middle{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $main-color;
+        .links{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 50%;
+            li{
+                padding: 10px;
+                a{
+                    color: white;
+                }
+            }
+        }
+        .elan-btn{
+            width: 20%;
+            color: white;
+            background-color: #7ed321;
+            border: 0;
+            outline: 0;
+            padding: 10px;
+            font-weight: 500;
+            font-size: 21px;
+        }
+    }
+}
+#cars{
+    background-color: #fafafa;
+    padding: 20px 0;
+    .cars{
+        .box{
+            display: inline-block;
+            border-radius: 10px;
+            overflow: hidden;
+            color: black;
+            background-color: white;
+            .top{
+                img{
+                    width: 100%;
+                }
+            }
+            .bottom{
+                padding: 10px;
+                .price{
+                    font-weight: 500;
+                }
+                .name{
+
+                }
+                .feature{
+
+                }
+                .date{
+                    color: #8d94ad;
+                }
+            }
+        }
+    }
+}

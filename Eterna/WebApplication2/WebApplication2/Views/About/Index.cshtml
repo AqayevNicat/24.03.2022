@@ -1,0 +1,115 @@
+﻿@model AboutVM
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="~/index.html">Home</a></li>
+                <li>About Us</li>
+            </ol>
+            <h2>About Us</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="~/assets/img/@Model.Abouts.Image" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <h3>@Model.Abouts.Title</h3>
+                    <p class="fst-italic">
+                        @Model.Abouts.ContentTop
+                    </p>
+                    <ul>
+                        @foreach (AboutLi about in Model.AboutLis)
+                        {
+                            <li><i class="bi bi-check-circle"></i> @about.Content</li>
+                        }
+                    </ul>
+                    <p>
+                        @Model.Abouts.ContentBottom
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container">
+
+            <div class="row no-gutters">
+                @foreach (CountUser countUser in Model.CountUsers)
+                {
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                        <div class="count-box">
+                            @Html.Raw(countUser.Image)
+                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>@Html.Raw(countUser.Content)</p>
+                            <a href="~/#">Find out more &raquo;</a>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section><!-- End Counts Section -->
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Clients</h2>
+                <p>@Model.ClientText.Content</p>
+            </div>
+
+            <div class="clients-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                    @foreach (ClientImg clientImg in Model.ClientImgs)
+                    {
+                        <div class="swiper-slide"><img src="~/assets/img/clients/@clientImg.Image" class="img-fluid" alt=""></div>
+                    }
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Clients Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Testimonials</h2>
+                <p>@Model.Testimonial.Content</p>
+            </div>
+
+            <div class="row">
+                @foreach (TestimonialEmp testimonialEmp in Model.TestimonialEmps)
+                {
+                    <div class="col-lg-6">
+                        <div class="testimonial-item">
+                            <img src="~/assets/img/testimonials/@testimonialEmp.Image" class="testimonial-img" alt="">
+                            <h3>@testimonialEmp.Name</h3>
+                            <h4>@testimonialEmp.Position</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                @testimonialEmp.Content
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+
+</main><!-- End #main -->

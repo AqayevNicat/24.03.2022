@@ -1,0 +1,28 @@
+﻿@model CarVM
+    <section id="carImage">
+        <div class="container">
+            <div class="row car-image">
+                <div class="box">
+                    <div class="left">
+                        @foreach (CarsCard carsCard in Model.CarsCards)
+                        {
+                            <img src="~/images/@carsCard.Image" alt="">
+                        }
+                    </div>
+                    <div class="right">
+                        @foreach (Detail detail in Model.Details)
+                        {
+                            <img src="~/images/@detail.Image" />
+                        }
+                    </div>
+                </div>
+                @foreach (CarsCard carsCard in Model.CarsCards)
+                {
+                    <div class="content">
+                        <div class="price">@carsCard.Price $</div>
+                        <p>@carsCard.Name,@carsCard.Motor L, @carsCard.Year il, @carsCard.Distance km</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>

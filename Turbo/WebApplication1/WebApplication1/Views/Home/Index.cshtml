@@ -1,0 +1,23 @@
+﻿@model List<CarsCard>
+<section id="cars">
+    <div class="container">
+        <div class="row cars">
+            @foreach (CarsCard carsCard in Model)
+            {
+                <div class="col-lg-3">
+                    <a asp-controller="Home" asp-action="Detail" asp-route-id="@carsCard.Id" class="box">
+                        <div class="top">
+                            <img src="~/images/@carsCard.Image" alt="">
+                        </div>
+                        <div class="bottom">
+                            <div class="price">@carsCard.Price $</div>
+                            <div class="name">@carsCard.Name</div>
+                            <div class="feature">@carsCard.Year,@carsCard.Motor L,@carsCard.Distance km</div>
+                            <div class="date">Bakı, 11.03.2022 14:30</div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
